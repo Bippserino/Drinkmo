@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Galada&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #F9E17A;
+    box-sizing: border-box;
+    padding-top: 1.5rem;
+    font-family: 'Abel', sans-serif;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-family: 'Galada', cursive;
+    font-weight: 400;
+    color: #D85555;
+}
+
+a {
+    text-decoration: none;
+    color: #D85555;
+    font-size: 1.5rem;
+    display: block;
+}
+
+span {
+    position: absolute;
+    bottom: -50px;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: animate 4s linear infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.25) translate(-70%, -70%);
+    background: linear-gradient(#fff, transparent);
+    border-radius: 50%;
+}
+
+/* START OF HEADER */
+
+.header {
+    display: block;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    
+}
+
+.header--logo {
+    height: 8rem;
+    display: block;
+    margin: 2rem auto 1rem auto;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    /* border-radius: 100%;
+    box-shadow: 0 0 2rem 0.2rem rgba(0, 0, 0, 0.4); */
+}
+
+.header--drinking-game {
+    height: 8rem;
+    display: block;
+    margin: 0 auto;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+}
+
+.header--cards {
+    width: 80vw;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,45%);
+    max-width: 1800px;
+    animation: moveInBottom;
+    animation-duration: 1s;
+}
+
+/* END OF HEADER */
+
+/* START OF BODY */
+
+#body {
+    background-color: #FFF2D2;
+    padding: 18rem 7rem 5rem 7rem;
+}
+
+.body__how-to-play--title {
+    text-align: center;
+}
+
+.body__how-to-play--game-rules, .body__how-to-play--alcohol {
+    margin-bottom: 6rem;
+}
+
+.body__how-to-play--img{
+    width: 250px;
+}
+
+.wine {
+    float: left;
+    margin-right: 2rem;
+}
+
+.rules {
+    float: right;
+    margin-left: 2rem;
+}
+
+.body__how-to-play--text {
+    font-size: 2.15rem;
+    padding-top: 8rem;
+}
+
+.body__how-to-play--game-rules p {
+    padding-top: 5.5rem;
+}
+
+/* END OF BODY */
+
+/* START OF FOOTER */
+
+.footer {
+    background-color: #F9E17A;
+    text-align: center;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.footer__logo-box {
+    margin: 0 auto 1rem auto;
+}
+
+.footer__logo-box--logo {
+    height: 5rem;
+}
+
+.footer__logo-box--drinking-game {
+    height: 4rem;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+    background-color: #FFF2D2;
+}
+
+
+
+/* END OF FOOTER */
+
+/* START OF GAME FILE */
+
+/* START OF GAME WINDOW */
+
+#header {
+    text-align: center;
+}
+
+.game-header {
+    display: inline-block;
+}
+
+.header__logo-box--logo {
+    height: 5rem;
+}
+
+.header__logo-box--drinking-game {
+    height: 4rem;
+}
+
+.game__window {
+    text-align: center;
+    margin: 1.45rem 0;
+    height: 80vh;
+    position: relative;
+}
+
+.game__window--deck-of-cards {
+    width: max(30vw, 150px);
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.game__window--higher-button {
+    width: max(2vw, 7rem);
+    max-width: 7rem;
+}
+
+.game__window__higher-button-box, .game__window__lower-button-box {
+    position: absolute;
+}
+
+.game__window--button {
+    height: 8rem;
+    background-color: white;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+}
+
+.game__window--button:hover {
+    background-color: whitesmoke;
+}
+
+.game__window__higher-button-box {
+    left: 25%;
+    top: 78%;
+}
+
+.game__window__lower-button-box {
+    right: 25%;
+    top: 78%;
+}
+
+.game__window--answer-img {
+    width: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* END OF GAME WINDOW */
+
+/* END OF GAME FILE */
+
+/* START OF MEDIA QUERIES */
+
+@media screen and (orientation:portrait) and (orientation:landscape) {
+    /* Portrait styles */
+}
+
+@media screen and (max-width: 1150px) and (orientation:landscape) {
+    #body {
+        padding-top: 10rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        height: 80vh;
+    }
+
+    .header--cards {
+        transform: translate(-50%,35%);
+    }
+
+    .body__how-to-play--title {
+        font-size: 3.5rem;
+    }
+
+    #body {
+        padding-top: 12rem;
+    } 
+}
+
+@media screen and (max-width: 800px) {
+    .header--drinking-game {
+        height: 7rem;
+    }
+    
+    .header--logo {
+        height: 6rem;
+    }
+
+    .body__how-to-play--img{
+        float: none;
+        width: 200px;
+    }
+
+    #body {
+        text-align: center;
+        padding-top: 9rem;
+    }
+
+    .body__how-to-play--title {
+        margin-bottom: 2rem;
+    }
+    
+    .body__how-to-play--text {
+        font-size: 1.6rem;
+        padding-top: 3rem;
+    }
+
+    .rules {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    a {
+        font-size: 1.25rem;
+    }
+
+    .header {
+        height: 50vh;
+    }
+
+    .header--cards {
+        transform: translate(-50%, 40%);
+    }
+
+    .header--drinking-game {
+        height: 6rem;
+    }
+
+    .game__window--button {
+        height: 6rem;
+    }
+
+    .game__window__higher-button-box {
+        left: 15%;
+        top: 65%;
+    }
+    
+    .game__window__lower-button-box {
+        right: 15%;
+        top: 65%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #body {
+        padding: 9rem 2rem;
+    }
+
+    .body__how-to-play--title {
+        font-size: 2.75rem;
+    }
+
+    .header--drinking-game {
+        height: 4rem;
+    }
+}
+
+@media screen and (min-width: 1150px) and (max-width: 1400px) and (orientation:landscape) {
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+    .body__how-to-play--text {
+        font-size: 1.75rem;
+        padding-top: 5.5rem;
+    }
+
+    .body__how-to-play--img{
+        width: 200px;
+    }
+
+    .body__how-to-play--game-rules p {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .game__window__higher-button-box, .game__window__lower-button-box {
+        top: 75%;
+    }
+    
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    .header {
+        height: 60vh;
+    }
+
+    .header--cards {
+        transform: translate(-50%,30%);
+    }
+
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+    .header {
+        height: 50vh;
+    }
+}
+
+/* END OF MEDIA QUERIES */
+
+/* START OF KEYFRAMES */
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translate(-50%,100vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%,45%);
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+/* END OF KEYFRAMES */

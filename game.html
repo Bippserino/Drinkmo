@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinkmo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+</head>
+<body>
+    <section id="header">
+        <div class="game-header">
+                <img src="img/logo.svg" alt="logo" class="header__logo-box--logo">
+                <img src="img/drinking-game.svg" alt="drinking-game" class="header__logo-box--drinking-game">
+        </div>
+    </section>
+
+    <section id="game">
+        <div class="game__window">
+            <div class="game__window__higher-button-box">
+                <img src="img/higher.svg" alt="higher" class="higher game__window--button" draggable="false">
+            </div>
+            <div class="game__window__cards">
+                <img src="cards/back.svg" alt="card" class="game__window--deck-of-cards stationary-deck" draggable="false">
+                <img src="" alt="card" class="game__window--deck-of-cards drawn-card" draggable="false" style="display: none;">
+            </div>
+            <div class="game__window__lower-button-box">
+                <img src="img/lower.svg" alt="lower" class="lower game__window--button" draggable="false">
+            </div>
+            <div class="game__window--card-counter">
+                <p></p>
+            </div>
+
+            
+            <div class="game__window--answer-box">
+                <img src="" alt="correct" class="game__window--answer-img" style="display: none;">
+            </div>
+        </div>
+    </section>
+    <p class="copyright">©Bippserino</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/bubbles.js"></script>
+</body>
+</html>
