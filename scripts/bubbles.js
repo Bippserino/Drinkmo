@@ -1,13 +1,14 @@
 var bubblesDOM
+var bubbleInterval
 
 class Bubbles {
     static createBubbles() {
         const createElement = document.createElement('span')
         var size = Math.random() * 50
-        createElement.style.width = size + 'px'
-        createElement.style.height = size + 'px'
-        createElement.style.left = (Math.random() * ((innerWidth - 80) - 80)) + 'px'
-        createElement.style.bottom = size + 'px'
+        $(createElement).css("width",`${size + 'px'}` )
+        $(createElement).css("height",`${size + 'px'}` )
+        $(createElement).css("left",`${(Math.random() * ((innerWidth - 80) - 80)) + 'px'}` )
+        createElement.style.bottom = 0
         createElement.style.zIndex = -2;
         $(bubblesDOM).append(createElement)
 
@@ -18,5 +19,9 @@ class Bubbles {
 }
 
 bubblesDOM = ".game__window"
-if ($(bubblesDOM).length == 0) bubblesDOM = ".header" 
-setInterval(Bubbles.createBubbles, 400)
+bubbleInterval = 400
+if ($(bubblesDOM).length == 0) {
+    bubblesDOM = ".header" 
+    bubbleInterval = 300
+}
+setInterval(Bubbles.createBubbles, bubbleInterval)

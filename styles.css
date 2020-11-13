@@ -13,7 +13,6 @@ html {
 body {
     background-color: #F9E17A;
     box-sizing: border-box;
-    padding-top: 1.5rem;
     font-family: 'Abel', sans-serif;
 }
 
@@ -172,6 +171,7 @@ span::before {
 
 .game-header {
     display: inline-block;
+    padding: 1rem;
 }
 
 .header__logo-box--logo {
@@ -184,14 +184,14 @@ span::before {
 
 .game__window {
     text-align: center;
-    margin: 1.45rem 0;
+    margin: 1.45rem 0 0;
     height: 80vh;
     position: relative;
 }
 
 .game__window--deck-of-cards {
     width: max(30vw, 150px);
-    max-width: 300px;
+    max-width: 280px;
     cursor: pointer;
 }
 

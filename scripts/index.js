@@ -11,7 +11,7 @@ class Deck {
 
         let fDeck = []
         let possibleColors = ["b", "w"]
-        let possibleCards = Array.from({length: 0}, (_, i) => (i + 2).toString())
+        let possibleCards = Array.from({length: 9}, (_, i) => (i + 2).toString())
         possibleCards = possibleCards.concat(["b", "d", "k", "a"])
         for (let i = 0; i < 2 * possibleColors.length; i++) {
             for (let j = 0; j < possibleCards.length; j++) {
@@ -99,6 +99,7 @@ class UI {
         $(".game__window--card-counter p").text(deck.length)
     }
 
+    // Places answer image on the screen
     static placeAnswerImage(answer) {
         $(".game__window--answer-box").html(`<img src="img/${answer}.svg" alt="correct" class="game__window--answer-img">`)
         $(".game__window--answer-box").ready(() => {
@@ -110,6 +111,7 @@ class UI {
         })         
     }
 
+    // When last card is drawn, remove deck image and 
     static handleLastCardBeingDrawn() {
         UI.placeCardImg(currentCard)
         if (deck.length !== 0) EventListeners.controls()
@@ -118,8 +120,6 @@ class UI {
             $(".drawn-card").click(() => {
             $(".drawn-card").hide(1000, () => {
                 $(".stationary-deck").show()
-                currentCard = ""
-                previousCard = ""
                 })      
              })
         }
@@ -127,6 +127,8 @@ class UI {
 }
 
 class Controls {
+
+    // Check if user input is correct
     static IsAnswerCorrect(control) {
         let answer
         switch (control) {
@@ -202,5 +204,6 @@ class EventListeners {
         })
     }
 }
+
 
 EventListeners.gameStart()
