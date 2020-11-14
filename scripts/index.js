@@ -102,7 +102,7 @@ class UI {
     // Places answer image on the screen
     static placeAnswerImage(answer) {
         $(".game__window--answer-box").html(`<img src="img/${answer}.svg" alt="correct" class="game__window--answer-img">`)
-        $(".game__window--answer-box").ready(() => {
+        $(".game__window--answer-img").ready(() => {
             $(".game__window--answer-img").show(0,() => {
             $(".game__window--answer-img").hide(1000, () => {
                 $(".game__window--answer-img").remove()
@@ -114,7 +114,9 @@ class UI {
     // When last card is drawn, remove deck image and 
     static handleLastCardBeingDrawn() {
         UI.placeCardImg(currentCard)
-        if (deck.length !== 0) EventListeners.controls()
+        if (deck.length !== 0) setTimeout(() => {
+            EventListeners.controls()
+        }, 500)
         else {
             $(".game__window--button").hide(300)
             $(".drawn-card").click(() => {
@@ -188,6 +190,7 @@ class EventListeners {
         const buttonsDOM = [...$(".game__window--button")]
         buttonsDOM.forEach(button => {
             $(button).click((event) => {
+                $(".game__window--button").off()
                 $(".game__window--button").show(300)
                 ELHandlers.handleControls(event.target.classList[0])
             })

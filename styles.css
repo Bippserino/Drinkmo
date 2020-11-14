@@ -66,6 +66,8 @@ span::before {
     margin: 2rem auto 1rem auto;
     animation-name: moveInRight;
     animation-duration: 1s;
+    position: relative;
+    z-index: 1 ;
     /* border-radius: 100%;
     box-shadow: 0 0 2rem 0.2rem rgba(0, 0, 0, 0.4); */
 }
@@ -76,6 +78,8 @@ span::before {
     margin: 0 auto;
     animation-name: moveInLeft;
     animation-duration: 1s;
+    position: relative;
+    z-index: 1 ;
 }
 
 .header--cards {
@@ -87,6 +91,11 @@ span::before {
     max-width: 1800px;
     animation: moveInBottom;
     animation-duration: 1s;
+    z-index: 0 ;
+}
+
+.header__logo-box {
+    z-index: 5;
 }
 
 /* END OF HEADER */
