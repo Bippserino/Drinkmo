@@ -101,7 +101,7 @@ class UI {
 
     // Places answer image on the screen
     static placeAnswerImage(answer) {
-        $(".game__window--answer-box").html(`<img src="img/${answer}.svg" alt="correct" class="game__window--answer-img">`)
+        $(".game__window--answer-box").html(`<img src="img/${answer}.svg" alt="correct" class="game__window--answer-img" draggable="false">`)
         $(".game__window--answer-img").ready(() => {
             $(".game__window--answer-img").show(0,() => {
             $(".game__window--answer-img").hide(1000, () => {
