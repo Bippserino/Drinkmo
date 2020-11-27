@@ -7,7 +7,7 @@ class Bubbles {
         var size = Math.random() * 50
         $(createElement).css("width",`${size + 'px'}` )
         $(createElement).css("height",`${size + 'px'}` )
-        $(createElement).css("left",`${(Math.random() * ((innerWidth - 80) - 80)) + 'px'}` )
+        $(createElement).css("left",`${(Math.random() * ((innerWidth - 40))) + 'px'}` )
         createElement.style.bottom = 0
         createElement.style.zIndex = -2;
         $(bubblesDOM).append(createElement)
